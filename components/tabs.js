@@ -6,37 +6,58 @@ const Tabs = () => {
     return (
         <Tab.Group>
             <Tab.List className={styles.navigation}>
-                <Tab className={styles.tablink}>About</Tab>
-                <Tab className={styles.tablink}>AR Portal</Tab>
-                <Tab className={styles.tablink}>Instagram Filters</Tab>
-                <Tab className={styles.tablink}>Cycladic</Tab>
-                <Tab className={styles.tablink}>Gruppo</Tab>
-                <Tab className={styles.tablink}>Other</Tab>
+                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>About</Tab>
+                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>AR Portal</Tab>
+                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>AR Filters</Tab>
+                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>Cycladic</Tab>
+                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>Gruppo</Tab>
+                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>Other</Tab>
             </Tab.List>
-            <Tab.Panels>
+            <Tab.Panels className={styles.content}>
                 <Tab.Panel className={styles.tabcontent}>
-                    <h3>About</h3>
-                    <p>Home is where the heart is..</p>
+                    <h2>About</h2>
+                    <p>Hello! My name is Ino. I am a Junior Developer at B-Reel.
+                        I studied Computer Science and Art History at Pomona College. 
+                        During the pandemic I took a year off from school to work as a Creative Technologist at Wonder Immersive 
+                        and here are some of the projects I have done over the past few years.</p>
+                    <a>CV</a>
+                    <a>email</a>
+                    <a>linkedin</a>
                 </Tab.Panel>
                 <Tab.Panel className={styles.tabcontent}>
-                    <h3>AR Portal</h3>
-                    <p>Some news this fine day!</p>
+                    <h2>AR Portal</h2>
+                    <p>In 2021 I designed and developed an AR Portal for MegaTVs limited series Siopilos Dromos.</p>
+                    <p>The assets for this project were designed in Blender while the animations and composition of those assets was made in SparkAR as the portal was distributed through Instagram.</p>
                 </Tab.Panel>
                 <Tab.Panel  className={styles.tabcontent}>
-                    <h3>Instagram Filters</h3>
-                    <p>Get in touch, or swing by for a cup of coffee.</p>
+                    <h2>AR Filters</h2>
+                    <p>While working at Wonder Immersive I designed and developed a number of instagram filters for Greek fashion brands.</p>
+                    <h3>Simple Caracters</h3>
+                    <h3>La Vie Secret Santa</h3>
+                    <h3>Hippie Fairy</h3>
+                    <h3>Galaxy Portal</h3>
                 </Tab.Panel>
                 <Tab.Panel  className={styles.tabcontent}>
-                    <h3>Cycladic</h3>
-                    <p>Get in touch, or swing by for a cup of coffee.</p>
+                    <h2>Cycladic</h2>
+                    <p>In the context of the Museum of Cycladic Art Educational Program, 
+                        we developed an Augmented Reality application that allows users to reimagine Cycladic figurines in their original painted form.</p>
+                    <p>This application gives users the opportunity to freely express their own artistic moods on one of the most iconic symbols of classical art. 
+                        Once in the museum, the users can use tablets provided by the museum to scan the target image on the floor in front of the 1.5 meter tall cycladic figurine in order to see it come to life. 
+                        The figurine jumps out of its case to come closer to the user who can then use the application to add facial features, tattoos, and accessories to the figurine. 
+                        As this application is targeted to both childern and adults visiting the museum, there is a combination of educational and playful accessories 
+                        that can be added to the figurine allowing the visitors to freely express themselves while also learning about the history of those figurines. </p>
                 </Tab.Panel>
                 <Tab.Panel  className={styles.tabcontent}>
-                    <h3>Gruppo</h3>
-                    <p>Get in touch, or swing by for a cup of coffee.</p>
+                    <h2>Gruppo</h2>
+                    <p>This AR application allows users to visualize Gruppo Cucine’s products in their environment enabling them to make customizations and see changes in real time in their personal space.</p>
+                    <p>Users are be able to choose from a selection of four kitchen models to place in their space. 
+                        After selecting a kitchen model they can choose to change the model’s configuration and two materials for the kitchen tops and cabinets.
+                        Users can move the kitchen around their space, rotate it and resize it in order to view it from all perspectives.</p>
+                    <p>They can capture a photo with their favorite Gruppo Cucine kitchen to share it with their friends or choose to save specific models and configurations on their device and place inquiries about them with Gruppo Cucine.</p>
                 </Tab.Panel>
                 <Tab.Panel  className={styles.tabcontent}>
-                    <h3>Other</h3>
-                    <p>Get in touch, or swing by for a cup of coffee.</p>
+                    <h2>Other</h2>
+                    <p>Some other fun projects and explorations</p>
                 </Tab.Panel>
             </Tab.Panels>
         </Tab.Group>

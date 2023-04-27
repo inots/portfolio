@@ -3,6 +3,7 @@
   flex-direction: column;
   /* justify-content: space-around; */
   align-items: center;
+  gap: 2rem;
   padding: 6rem;
   min-height: 100vh;
 
@@ -22,43 +23,53 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding: 10px 0;
+  justify-content: space-around;
+  /* padding: 10px 0; */
+  width: 60%;
 }
 
 /* Style tab links */
 .tablink {
   background-color: #285238;
   color: white;
-  float: left;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
-  font-size: 17px;
-  /* max-width: 30%; */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
   text-align: center;
-  /* height: 100px; */
 }
+  
+.selected {
+  background-color: #9EA93F;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  text-align: center;
+}
+
 
 .tablink:hover {
   background-color: #9EA93F;
 }
 
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  color: white;
-  /* display: none; */
-  padding: 6rem;
+.content {
+  width: 50%;
   height: 100%;
-  width: 100vw;
+  color: white;
 }
 
-#Home {background-color: red;}
-#News {background-color: green;}
-#Contact {background-color: blue;}
-#About {background-color: orange;}
-
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+}
 
 /* .description {
   display: inherit;
@@ -187,15 +198,20 @@
   .navigation {
       max-width: 75%;
       flex-wrap: wrap;
-      margin: 0 auto;
+      /* margin: 0 auto; */
+      justify-content: center;
   }
 
   .tablink {
-    border: 2px solid #9EA93F;
+    /* border: 2px solid #9EA93F; */
+  }
+
+  .content {
+    width: 80%;
   }
 
   .tabcontent {
-    padding: 4rem;
+    /* padding: 4rem; */
   }
 
   /* .grid {
