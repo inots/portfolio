@@ -1,13 +1,66 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-around; */
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+
+  margin: 0;
+  /* padding: 0; */
+  box-sizing: border-box;
+  font-family: 'Courier New', sans-serif;
+  background: #285238;
+  color: #9EA93F;
 }
 
-.description {
+.heading {
+  text-align: center;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #285238;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  /* max-width: 30%; */
+  text-align: center;
+  /* height: 100px; */
+}
+
+.tablink:hover {
+  background-color: #9EA93F;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  /* display: none; */
+  padding: 6rem;
+  height: 100%;
+  width: 100vw;
+}
+
+#Home {background-color: red;}
+#News {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;}
+
+
+/* .description {
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
@@ -107,7 +160,7 @@
 .logo {
   position: relative;
 }
-/* Enable hover only on non-touch devices */
+/* Enable hover only on non-touch devices 
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     background: rgba(var(--card-rgb), 0.1);
@@ -123,15 +176,29 @@
   .card:hover span {
     transform: none;
   }
-}
+} */
 
 /* Mobile */
 @media (max-width: 700px) {
-  .content {
+  .main {
+    padding: 4rem 0;
+  }
+
+  .navigation {
+      max-width: 75%;
+      flex-wrap: wrap;
+      margin: 0 auto;
+  }
+
+  .tablink {
+    border: 2px solid #9EA93F;
+  }
+
+  .tabcontent {
     padding: 4rem;
   }
 
-  .grid {
+  /* .grid {
     grid-template-columns: 1fr;
     margin-bottom: 120px;
     max-width: 320px;
@@ -199,31 +266,5 @@
       rgb(var(--background-end-rgb)) 40%
     );
     z-index: 1;
-  }
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+  } */
 }
