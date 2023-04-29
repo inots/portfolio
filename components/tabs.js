@@ -1,20 +1,35 @@
 import React from "react";
+import Link from "next/link";
 import { Tab } from '@headlessui/react'
+import { getAllProjects } from "@/lib/projects";
 import styles from '@/styles/Home.module.css'
 
 const Tabs = () => {
+    const projects = getAllProjects();
     return (
         <Tab.Group>
             <Tab.List className={styles.navigation}>
-                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>About</Tab>
-                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>AR Portal</Tab>
-                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>AR Filters</Tab>
-                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>Cycladic</Tab>
-                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>Gruppo</Tab>
-                <Tab className={({ selected }) => selected ? styles.selected : styles.tablink}>Other</Tab>
+                {projects.map((p) => (
+                    <Tab className={({ selected }) => selected ? styles.selected : styles.tablink} key={p.id}>{p.title}</Tab>
+                ))}
             </Tab.List>
             <Tab.Panels className={styles.content}>
-                <Tab.Panel className={styles.tabcontent}>
+                {projects.map((p) => (
+                    <Tab.Panel className={styles.tabcontent} key={p.id}>
+                        <h2>{p.title}</h2>
+                        {p.content.map((c) => (
+                            <p key={p.content.indexOf(c)}>{c}</p>
+                        ))}
+                        {p.links.map((link) => (
+                            <p key={link.id}>
+                                <Link href={link.url}>
+                                    {link.linkTitle}
+                                </Link>
+                            </p>
+                        ))}
+                    </Tab.Panel>
+                ))}
+                {/* <Tab.Panel className={styles.tabcontent}>
                     <h2>About</h2>
                     <p>Hello! My name is Ino. I am a Junior Developer at B-Reel.
                         I studied Computer Science and Art History at Pomona College. 
@@ -58,7 +73,7 @@ const Tabs = () => {
                 <Tab.Panel  className={styles.tabcontent}>
                     <h2>Other</h2>
                     <p>Some other fun projects and explorations</p>
-                </Tab.Panel>
+                </Tab.Panel> */}
             </Tab.Panels>
         </Tab.Group>
     )
