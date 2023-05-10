@@ -11,8 +11,8 @@
   /* padding: 0; */
   box-sizing: border-box;
   font-family: "Courier New", Courier, monospace;
-  background: #285238;
-  color: #9EA93F;
+  background: #cad2c5;
+  color: #52796f;
 }
 
 .heading {
@@ -35,19 +35,19 @@
 
 /* Style tab links */
 .tablink {
-  background-color: #285238;
-  color: white;
+  background-color: #cad2c5;
+  color: #2f3e46;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Courier New", Courier, monospace !important;
   font-size: 20px;
   text-align: center;
 }
   
 .selected {
-  background-color: #9EA93F;
+  background-color: #52796f;
   color: white;
   border: none;
   outline: none;
@@ -60,13 +60,14 @@
 
 
 .tablink:hover {
-  background-color: #9EA93F;
+  background-color: #52796f;
+  color: white;
 }
 
 .content {
   width: 50%;
   height: 100%;
-  color: white;
+  color: #2f3e46;
 }
 
 /* Style the tab content (and add height:100% for full page content) */
@@ -76,6 +77,10 @@
   gap: 1rem;
 }
 
+.link {
+  font-weight: bold;
+}
+
 /* Mobile */
 @media (max-width: 700px) {
   .main {
@@ -83,7 +88,8 @@
   }
 
   .navigation {
-      max-width: 75%;
+      width: 100%;
+      padding: 0 12px;
       flex-wrap: wrap;
       /* margin: 0 auto; */
       justify-content: center;
@@ -91,6 +97,11 @@
 
   .tablink {
     /* border: 2px solid #9EA93F; */
+    font-size: 16px;
+  }
+
+  .selected {
+    font-size: 16px;
   }
 
   .content {

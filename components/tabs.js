@@ -1,8 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { Tab } from '@headlessui/react'
+import { Tab } from '@headlessui/react';
 import { getAllProjects } from "@/lib/projects";
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.css';
+import Image from 'next/image'
+
 
 const Tabs = () => {
     const projects = getAllProjects();
@@ -10,7 +12,10 @@ const Tabs = () => {
         <Tab.Group>
             <Tab.List className={styles.navigation}>
                 {projects.map((p) => (
-                    <Tab className={({ selected }) => selected ? styles.selected : styles.tablink} key={p.id}>{p.title}</Tab>
+                    <Tab className={({ selected }) => selected ? styles.selected : styles.tablink} key={p.id}>
+                        {/* {p.title} */}
+                        <Image src={p.icon} width={50} height={50}/>
+                        </Tab>
                 ))}
             </Tab.List>
             <Tab.Panels className={styles.content}>
@@ -22,7 +27,7 @@ const Tabs = () => {
                         ))}
                         {p.links.map((link) => (
                             <p key={link.id}>
-                                <Link href={link.url}>
+                                <Link href={link.url} className={styles.lin}>
                                     {link.linkTitle}
                                 </Link>
                             </p>
