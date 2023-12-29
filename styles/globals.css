@@ -1,11 +1,19 @@
 :root {
-  --max-width: 1100px;
+  --max-width: 1260px;
   --border-radius: 12px;
+  --primary-font: 'Georgia';
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
+  --body-size: 20px;
+  --nav-size: 24px;
+  --heading-size: 68px;
+
   --foreground-rgb: 0, 0, 0;
+  --background-color: #A3B18A;
+  --primary-text-color: #000000;
+  --secondary-text-color: #344E41;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
@@ -38,10 +46,18 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+  @media (max-width: 700px) {
+    --heading-size: 32px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --background-color: #000000;
+    --primary-text-color: #A3B18A;
+    --secondary-text-color: #A3B18A;
+
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
@@ -87,17 +103,17 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--background-color);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1{
+  font-size: var(--heading-size);
+  font-weight: normal;
 }
 
 @media (prefers-color-scheme: dark) {
