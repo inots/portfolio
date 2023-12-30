@@ -79,6 +79,11 @@
   display: flex;
   flex-flow: column;
   gap: 1rem;
+
+  &.paragraph {
+    width: 60%;
+    margin: 0 auto;
+  }
 }
 
 .link {
@@ -86,7 +91,7 @@
 }
 
 /* Mobile */
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .main {
     margin: 15px;
     padding: 15px;
@@ -117,7 +122,7 @@
     /* width: 80%; */
   }
 
-  .tabcontent {
-    /* padding: 4rem; */
+  .tabcontent.paragraph {
+    width: 100%;
   }
 }

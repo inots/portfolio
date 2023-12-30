@@ -19,7 +19,7 @@ const Tabs = () => {
             </Tab.List>
             <Tab.Panels className={styles.content}>
                 {content.map((p) => (
-                    <Tab.Panel className={styles.tabcontent} key={p.id}>
+                    <Tab.Panel className={p.content ? `${styles.tabcontent} ${styles.paragraph}` : styles.tabcontent} key={p.id}>
                         {p.content ? 
                             p.content.map((c) => (
                                 <div key={p.content.indexOf(c)}>{c}</div>
@@ -27,7 +27,7 @@ const Tabs = () => {
                         : <ProjectCard/> }
                             {p.links?.map((link) => (
                                 <p key={link.id}>
-                                    <Link href={link.url} className={styles.lin}>
+                                    <Link href={link.url} className={styles.link}>
                                         {link.linkTitle}
                                     </Link>
                                 </p>
