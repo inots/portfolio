@@ -4,12 +4,16 @@ import { Tab } from '@headlessui/react';
 import styles from '@/styles/Home.module.css';
 import { getAllContent } from "@/lib/content";
 import ProjectCard from "./projectCard";
+import ThemeSelector from "./themeSelector";
 
 
-const Tabs = () => {
+const Tabs = ({updateCurrTab}) => {
     const content = getAllContent();
     return (
-        <Tab.Group>
+        <Tab.Group
+            onChange={(index) => {
+                updateCurrTab(index);
+            }}>
             <Tab.List className={styles.navigation}>
                 {content.map((tab) => (
                     <Tab className={({ selected }) => selected ? styles.selected : styles.tablink} key={tab.id}>
@@ -20,11 +24,14 @@ const Tabs = () => {
             <Tab.Panels className={styles.content}>
                 {content.map((p) => (
                     <Tab.Panel className={p.content ? `${styles.tabcontent} ${styles.paragraph}` : styles.tabcontent} key={p.id}>
-                        {p.content ? 
-                            p.content.map((c) => (
-                                <div key={p.content.indexOf(c)}>{c}</div>
-                            ))
-                        : <ProjectCard/> }
+                        <div className={p.description == "Hello" ? styles.intro : ""}>
+                            {p.content ? 
+                                p.content.map((c) => (
+                                    <div key={p.content.indexOf(c)}>{c}</div>
+                                ))
+                            : <ProjectCard/> }
+                        </div>
+                        <div className={styles.notes}>
                             {p.links?.map((link) => (
                                 <p key={link.id}>
                                     <Link href={link.url} className={styles.link}>
@@ -32,6 +39,7 @@ const Tabs = () => {
                                     </Link>
                                 </p>
                             ))}
+                        </div>
                         </Tab.Panel>
                     ))}
             </Tab.Panels>
