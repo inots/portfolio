@@ -1,10 +1,13 @@
 :root {
   --max-width: 1260px;
   --border-radius: 12px;
-  --primary-font: 'Montserrat', 'Tahoma';
+  --primary-font: "Poppins", sans-serif;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  font-weight: 400;
+  font-style: normal;
 
   --body-size: 20px;
   --nav-size: 24px;
@@ -12,8 +15,8 @@
 
   --foreground-rgb: 0, 0, 0;
   --background-color: #A3B18A;
-  --primary-text-color: #000000;
-  --secondary-text-color: #344E41;
+  --primary-text-color: #A3B18A;
+  --secondary-text-color: #A3B18A;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
