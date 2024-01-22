@@ -9,13 +9,15 @@ const ProjectCard = () => {
         <div className={styles.container}>
             {projects.map((p)=>(
                 <div className={styles.inner} key={p.id}>
-                    <Image
-                        src={p.image}
-                        width={300}
-                        height={300}
-                        alt={p.alt}
-                        className={styles.image}
-                        />
+                    <Link href={p.links[0].url}>
+                        <Image
+                            src={p.image}
+                            width={300}
+                            height={300}
+                            alt={p.alt}
+                            className={styles.image}
+                            />
+                    </Link>
                     <div className={styles.text}>
                         <div>
                             <h4>{p.title}</h4>
