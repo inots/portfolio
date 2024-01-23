@@ -4,7 +4,7 @@ import { Tab } from '@headlessui/react';
 import styles from '@/styles/Home.module.css';
 import { getAllContent } from "@/lib/content";
 import ProjectCard from "./projectCard";
-import ThemeSelector from "./themeSelector";
+import CarbonDisclaimer from "./carbonDisclaimer";
 
 
 const Tabs = ({updateCurrTab}) => {
@@ -40,6 +40,9 @@ const Tabs = ({updateCurrTab}) => {
                                 </p>
                             ))}
                         </div>
+                        {p.title == "About" ? 
+                            <CarbonDisclaimer />
+                        : ""}
                         </Tab.Panel>
                     ))}
             </Tab.Panels>

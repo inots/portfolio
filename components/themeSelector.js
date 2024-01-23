@@ -15,7 +15,7 @@ const ThemeSelector = () => {
                 {themes.map((t) => (
                     <button key={t.id} id={`button${t.id}`} className={option == t.id ? `${styles.themeButton} ${styles.selected}` : styles.themeButton} onClick={() => {setOption(t.id)}}>{t.title}</button>
                 ))}
-        </div>
+            </div>
       </> 
       );
 }
