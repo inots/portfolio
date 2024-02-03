@@ -1,0 +1,15 @@
+.options {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+    height: calc(100vh - 40px);
+    min-width: 120px;
+}
+
+@media (max-width: 850px) {
+    .options {
+        flex-flow: row;
+        height: auto;
+        align-items: center;
+    }
+}

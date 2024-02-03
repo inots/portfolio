@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    gap: 22px;
+    justify-content: space-between;
+    align-items: center;
+    max-height: calc(100vh - 40px);
+    max-width: 550px;
+}
+
+.content {
+    display: flex;
+    flex-flow: column;
+    gap: 12px;
+    font-size: var(--heading-size)
+}
+
+.links {
+    display: flex;
+    flex-flow: row;
+    gap: 12px;
+    align-self: stretch;
+    font-size: var(--body-size);
+}
+
+.link {
+
+}
