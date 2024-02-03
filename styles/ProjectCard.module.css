@@ -1,30 +1,74 @@
 .container {
     width:100%;
+    max-width: 650px;
+    padding: 20px 0;
+    position: relative;
+    top: -20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 930px));
     grid-gap: 30px;
     justify-content: center;
+    height: 100vh;
+    min-width: min-content;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+
+.container::-webkit-scrollbar { /* hide scrollbar on chrome, safari, and opera */
+    display: none;
+  }
 
 .inner {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 30px;
     justify-content: center;
     max-width: max-content;
 }
 
-.image {
+.imageContainer {
     border: 2px solid var(--secondary-text-color);
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    max-height: 370px;
+    overflow: clip;
+    object-fit: cover;
+}
+
+.image {
+    /* width: 300px;
+    height: 300px; */
+    /* object-fit: none; */
+    display: flex;
+    justify-content: center;
+    /* max-height: 370px; */
+
+}
+
+.imageInner {
+    width: 100%;
+    height: auto;
 }
 
 .text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 12px;
     max-height: 300px;
+}
+
+.description {
+    display: flex;
+    flex-flow: column;
+    gap: 4px;
+}
+
+.notes {
+    display: flex;
+    flex-flow: column;
+    gap: 12px;
 }
 
 .link {
@@ -32,17 +76,14 @@
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 850px) {
     .container {
-        grid-template-columns: 1fr; 
-    }
-
-    .inner{
-        flex-wrap: wrap;
+        height: auto;
+        overflow: visible;
+        position: unset;
+        padding: 0;
     }
 
     .image {
-        width: 100%;
-        height: auto;
     }
 }
