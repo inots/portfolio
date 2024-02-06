@@ -8,11 +8,16 @@ import ProjectCard from '@/components/projectCard';
 import Fragment from '@/components/ShaderFragment';
 
 export default function Home() {
-
   const [themeOption, setThemeOption] = useState(0);
 
   const updateThemeOption = (t) => {
     setThemeOption(t);
+  }
+
+  const [clear, setClear] = useState(false);
+
+  const updateClear = (s) => {
+    setClear(s);
   }
   
   return (
@@ -36,9 +41,15 @@ export default function Home() {
       </Canvas>
     </div>
         <main className={styles.main}>
-          <Header updateThemeOption={updateThemeOption} />
-          <AboutSection />
-          <ProjectCard />
+          <Header updateThemeOption={updateThemeOption} updateClear={updateClear}/>
+          {clear? 
+            ''
+            : 
+              <>
+                <AboutSection />
+                <ProjectCard />
+              </>
+          }
         </main>
     </>
   )

@@ -1,4 +1,4 @@
-.options {
+.container {
     display: flex;
     justify-content: space-between;
     flex-flow: column;
@@ -6,10 +6,20 @@
     min-width: 120px;
 }
 
+.options {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+
 @media (max-width: 850px) {
-    .options {
+    .container {
         flex-flow: row;
         height: auto;
         align-items: center;
+    }
+
+    .options {
+        gap: 10px;
     }
 }

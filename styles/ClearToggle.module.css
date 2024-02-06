@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.switch {
+    position: relative;
+    display: inline-flex;
+    height: 1.25rem;
+    width: 2.5rem;
+    border-radius: 9999px;
+    place-items: center;
+    background-color: #3D3D3D;
+    border: solid 2px #5A782A;
+}
+
+.innerSwitch {
+    display : block;
+    height: 100%;
+    width: 50%;
+    border-radius: 9999px;
+    background-color: #86A457;
+
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.innerOn {
+    transform: translateX(100%);
+}
+
+.innerOff {
+}
