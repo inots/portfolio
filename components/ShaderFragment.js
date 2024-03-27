@@ -33,6 +33,9 @@ const Fragment = (themeOption) => {
           value: 0.0,
         },
         u_mouse: { value: new Vector2(0, 0) },
+        u_resolution: {
+          value: new Vector2(window.innerWidth, window.innerHeight)
+        },
         u_bg: {
           value: new Color(themeColors.current.bg_color),
         },
