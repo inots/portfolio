@@ -11,27 +11,6 @@ const DownArrow = () => {
     )
 }
 
-const Dropdown = () => {
-    const themes = getAllThemes();
-    return (
-      <Menu>
-        <Menu.Button className={styles.button}>
-            Theme
-            <DownArrow />
-        </Menu.Button>
-        <Menu.Items className={styles.dropdown}>
-            {themes.map((t) => (
-                <Menu.Item key={t.id} className={styles.item}>
-                    {({ active }) => (
-                        <button key={t.id} id={`button${t.id}`} className={option == t.id ? `${styles.themeButton} ${styles.selected}` : styles.themeButton} onClick={() => {setOption(t.id)}}>{t.title}</button>
-                    )}
-                </Menu.Item>
-            ))}
-        </Menu.Items>
-      </Menu>
-    )
-}
-
 const ThemeSelector = ({updateThemeOption}) => {
     const themes = getAllThemes();
     const [option, setOption] = useState(0);
