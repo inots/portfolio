@@ -52,14 +52,14 @@ const Fragment = (themeOption) => {
       };
     }, [updateMousePosition]);
 
-    useEffect(() => {
-        const elem = document.getElementById("header");
-        elem.addEventListener("click", updateThemeColors(themeOption.themeOption), false );
+    // useEffect(() => {
+    //     const elem = document.getElementById("header");
+    //     elem.addEventListener("click", updateThemeColors(themeOption.themeOption), false );
   
-      return () => {
-        elem.removeEventListener("click", updateThemeColors(themeOption.themeOption), false );
-      };
-    }, [updateThemeColors, themeOption])
+    //   return () => {
+    //     elem.removeEventListener("click", updateThemeColors(themeOption.themeOption), false );
+    //   };
+    // }, [updateThemeColors, themeOption])
   
     useFrame((state) => {
       const { clock } = state;

@@ -30,7 +30,7 @@ export default function Home() {
       </Head>
 
     <div className={styles.scene}>
-      {/* <Canvas
+      <Canvas
         shadows
         className={styles.canvas}
         camera={{
@@ -38,7 +38,7 @@ export default function Home() {
         }}
       >
         <Fragment themeOption={themeOption}/>
-      </Canvas> */}
+      </Canvas>
     </div>
         <main className={styles.main}>
           <Header updateThemeOption={updateThemeOption} updateClear={updateClear}/>

@@ -16,10 +16,10 @@ const Header = ({updateThemeOption, updateClear}) => {
                     className={styles.image}
                     />
 
-                <div className={styles.options} id='header'>
+                {/* <div className={styles.options} id='header'>
                     <ThemeSelector updateThemeOption={updateThemeOption} />
                     <ClearToggle updateClear={updateClear}/>
-                </div>
+                </div> */}
             </div>
         </>
     )
